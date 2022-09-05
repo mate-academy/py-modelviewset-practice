@@ -7,9 +7,9 @@ class AuthorSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     first_name = serializers.CharField(required=True)
     last_name = serializers.CharField(required=True)
-    pseudonym = serializers.CharField()
-    age = serializers.IntegerField()
-    retired = serializers.BooleanField()
+    pseudonym = serializers.CharField(required=False)
+    age = serializers.IntegerField(required=True)
+    retired = serializers.BooleanField(required=True)
 
     def create(self, validated_data):
         return Author.objects.create(**validated_data)
