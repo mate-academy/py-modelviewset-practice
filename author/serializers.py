@@ -7,7 +7,7 @@ class AuthorSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
     first_name = serializers.CharField(max_length=64)
     last_name = serializers.CharField(max_length=64)
-    pseudonym = serializers.CharField(max_length=64, allow_null=True, allow_blank=True)
+    pseudonym = serializers.CharField(max_length=64, required=False, allow_null=True, allow_blank=True)
     age = serializers.IntegerField()
     retired = serializers.BooleanField()
 
