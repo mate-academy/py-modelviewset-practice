@@ -24,7 +24,10 @@ class Migration(migrations.Migration):
                 ),
                 ("first_name", models.CharField(max_length=64)),
                 ("last_name", models.CharField(max_length=64)),
-                ("pseudonym", models.CharField(blank=True, max_length=64, null=True)),
+                (
+                    "pseudonym",
+                    models.CharField(blank=True, max_length=64, null=True),
+                ),
                 ("age", models.IntegerField()),
                 ("retired", models.BooleanField()),
             ],
