@@ -8,5 +8,8 @@ class Author(models.Model):
     age = models.IntegerField()
     retired = models.BooleanField()
 
+    class Meta:
+        verbose_name_plural = "authors"
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
