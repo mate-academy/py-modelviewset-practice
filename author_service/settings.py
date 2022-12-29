@@ -77,6 +77,8 @@ TEMPLATES = [
     },
 ]
 
+CRISPY_TEMPLATE_PACK = "uni_form"
+
 WSGI_APPLICATION = "author_service.wsgi.application"
 
 # Database

@@ -1,27 +1,15 @@
 from django.urls import path, include
+from rest_framework import routers
 
 from author.views import AuthorViewSet
 
 
-author_list = AuthorViewSet.as_view(actions={
-    "get": "list",
-    "post": "create",
-    "put": "update",
-    "patch": "partial_update",
-    "delete": "destroy"}
-)
-
-author_detail = AuthorViewSet.as_view(actions={
-    "get": "retrieve",
-    "put": "update",
-    "patch": "partial_update",
-    "delete": "destroy"}
-)
+router = routers.DefaultRouter()
+router.register("authors", AuthorViewSet, basename="manage")
 
 
 urlpatterns = [
-    path("authors/", author_list, name="author-list"),
-    path("authors/<int:pk>/", author_detail, name="author-detail"),
+    path("", include(router.urls), name="author:manage-list"),
 ]
 
 app_name = "author"
