@@ -79,8 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "author_service.wsgi.application"
 
-CRISPY_TEMPLATE_PACK = "uni_form"
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
