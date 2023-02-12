@@ -5,7 +5,7 @@ from django.urls import path, include
 from author.views import AuthorViewSet
 
 router = routers.DefaultRouter()
-router.register("authors", AuthorViewSet)
+router.register("authors", AuthorViewSet, basename="manage")
 
 urlpatterns = [
     path("", include(router.urls))

@@ -7,10 +7,4 @@ class AuthorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Author
-        fields = [
-            "first_name",
-            "last_name",
-            "pseudonym",
-            "age",
-            "retired"
-        ]
+        fields = "__all__"
