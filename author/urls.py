@@ -4,9 +4,10 @@ from author.views import AuthorViewSet
 
 
 urlpatterns = [
-    path("authors/", AuthorViewSet.as_view(actions={
-        "get": "list",
-        "post": "create"
+    path("authors/", AuthorViewSet.as_view(
+        actions={
+            "get": "list",
+            "post": "create"
         }
     ), name="manage-list"),
     path("authors/<int:pk>/", AuthorViewSet.as_view(
