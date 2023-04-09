@@ -12,4 +12,3 @@ urlpatterns = [
 ]
 
 app_name = "author"
-
