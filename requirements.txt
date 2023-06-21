@@ -4,7 +4,7 @@ django-crispy-forms==1.14.0
 django-debug-toolbar==3.2.4
 djangorestframework==3.13.1
 flake8==6.0.0
-flake8-quotes==3.3.1
+flake8-quotes==3.3.2
 mccabe==0.7.0
 pycodestyle==2.10.0
 pyflakes==3.0.1
