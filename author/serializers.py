@@ -4,15 +4,16 @@ from author.models import Author
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Author
-        fields = "__all__"
     id = serializers.IntegerField(read_only=True)
     first_name = serializers.CharField(max_length=64)
     last_name = serializers.CharField(max_length=64)
     pseudonym = serializers.CharField(max_length=64, required=False)
     age = serializers.IntegerField()
     retired = serializers.BooleanField()
+
+    class Meta:
+        model = Author
+        fields = "__all__"
 
     def create(self, validated_data):
         return Author.objects.create(**validated_data)
@@ -22,16 +23,13 @@ class AuthorSerializer(serializers.ModelSerializer):
             "first_name", instance.first_name
         )
         instance.last_name = validated_data.get(
-            validated_data.get("last_name", validated_data.last_name)
-        )
-        instance.pseudonym = validated_data.get(
-            "pseudonym", instance.pseudonym
+            "last_name", instance.last_name
         )
         instance.pseudonym = validated_data.get(
             "pseudonym", instance.pseudonym
         )
         instance.age = validated_data.get("age", instance.age)
-        instance.retired = validated_data.get("retired", instance.age)
+        instance.retired = validated_data.get("retired", instance.retired)
 
         instance.save()
         return instance
