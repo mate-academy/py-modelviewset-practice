@@ -30,4 +30,3 @@ class AuthorSerializer(serializers.ModelSerializer):
         instance.age = validated_data.get("age", instance.age)
         instance.retired = validated_data.get("retired", instance.retired)
         return instance.save()
-
