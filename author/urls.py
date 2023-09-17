@@ -5,10 +5,10 @@ from rest_framework import routers
 from author.views import AuthorViewSet
 
 router = routers.DefaultRouter()
-router.register("author", AuthorViewSet)
+router.register("author", AuthorViewSet, basename="manage")
 
 urlpatterns = [
-    path("", include(router.urls))
+    path("", include(router.urls), name="manage-list")
 ]
 
 app_name = "author"
