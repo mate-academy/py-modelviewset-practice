@@ -7,15 +7,16 @@ class AuthorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Author
-        fields = (
-            "id",
-            "first_name",
-            "last_name",
-            "pseudonym",
-            "age",
-            "retired"
-        )
-        read_only_fields = ("id",)
+        fields = "__all__"
+        # fields = (
+        #     "id",
+        #     "first_name",
+        #     "last_name",
+        #     "pseudonym",
+        #     "age",
+        #     "retired"
+        # )
+        # read_only_fields = ("id",)
 
     # def create(self, validated_data):
     #     """
