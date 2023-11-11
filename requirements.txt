@@ -9,3 +9,10 @@ asgiref==3.5.2
 djangorestframework==3.13.1
 pytz==2022.2.1
 sqlparse==0.4.2
+
+pip~=23.2.1
+wheel~=0.41.2
+pyflakes~=2.5.0
+pycodestyle~=2.9.1
+setuptools~=68.2.0
+include~=0.2.2
