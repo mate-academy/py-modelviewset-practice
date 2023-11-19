@@ -4,7 +4,7 @@ from author.models import Author
 
 
 class AuthorSerializer(serializers.Serializer):
-    id = serializers.IntegerField(read_only=True)
+    id = serializers.IntegerField(read_only=True)  # noqa: VNE003
     first_name = serializers.CharField(max_length=64, required=True)
     last_name = serializers.CharField(max_length=64, required=True)
     pseudonym = serializers.CharField(max_length=64, required=False)
