@@ -1,3 +1,8 @@
-# Create your urls here
+from rest_framework import routers
+from author.views import AuthorViewSet
 
-urlpatterns = []
+app_name = 'author'
+router = routers.DefaultRouter()
+router.register("authors", AuthorViewSet, basename="manage")
+
+urlpatterns = router.urls
