@@ -7,8 +7,12 @@ from author.views import AuthorViewSet
 router = routers.DefaultRouter()
 router.register("authors", AuthorViewSet)
 
+router = routers.DefaultRouter()
+router.register("authors", AuthorViewSet, basename="manage")
+
+
 urlpatterns = [
-    path("manage-list/", include(router.urls), name="manage-list"),
+path("", include(router.urls))
 ]
 
 app_name = "author"
