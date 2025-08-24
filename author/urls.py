@@ -1,3 +1,23 @@
-# Create your urls here
+from author.views import AuthorViewSet
 
-urlpatterns = []
+from django.urls import path
+
+
+author_list = AuthorViewSet.as_view({
+    "get": "list", "post": "create"
+})
+
+author_detail = AuthorViewSet.as_view({
+    "get": "retrieve",
+    "put": "update",
+    "patch": "partial_update",
+    "delete": "destroy",
+})
+
+
+urlpatterns = [
+    path("authors/", author_list, name="manage-list"),
+    path("authors/<int:pk>/", author_detail, name="manage-detail"),
+]
+
+app_name = "author"
