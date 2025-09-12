@@ -7,7 +7,7 @@ from .views import AuthorViewSet
 app_name = "author"
 
 router = routers.SimpleRouter()
-router.register(r"authors", AuthorViewSet)
+router.register(r"authors", AuthorViewSet, basename="manage")
 
 urlpatterns = [
     path("", include(router.urls))
