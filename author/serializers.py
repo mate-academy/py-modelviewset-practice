@@ -1,6 +1,23 @@
 from rest_framework import serializers
 
+from author.models import Author
+
 
 class AuthorSerializer(serializers.ModelSerializer):
-    # write your code here
-    pass
+    pseudonym = serializers.CharField(
+        required=False,
+        allow_null=True,
+        allow_blank=True
+    )
+
+    class Meta:
+        model = Author
+        fields = (
+            "id",
+            "first_name",
+            "last_name",
+            "pseudonym",
+            "age",
+            "retired"
+        )
+        read_only_fields = ("id",)
