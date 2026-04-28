@@ -4,10 +4,10 @@ from author.views import AuthorViewSet
 
 router = routers.DefaultRouter()
 # Додаємо basename='manage', щоб створилися імена manage-list та manage-detail
-router.register(r'author', AuthorViewSet, basename='manage')
+router.register(r"author", AuthorViewSet, basename="manage")
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]
 
-app_name = 'author'
+app_name = "author"
