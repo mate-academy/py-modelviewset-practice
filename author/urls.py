@@ -3,7 +3,9 @@ from rest_framework import routers
 from author.views import AuthorViewSet
 
 router = routers.DefaultRouter()
-router.register(r'author', AuthorViewSet)
+# Додаємо basename='manage', щоб створилися імена manage-list та manage-detail
+router.register(r'author', AuthorViewSet, basename='manage')
+
 urlpatterns = [
     path('', include(router.urls)),
 ]
