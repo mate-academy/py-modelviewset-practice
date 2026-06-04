@@ -3,7 +3,7 @@ from author.views import AuthorViewSet
 
 
 router = routers.DefaultRouter()
-router.register("authors", AuthorViewSet)
+router.register("authors", AuthorViewSet, basename="manage")
 urlpatterns = router.urls
 
 app_name = "author"
