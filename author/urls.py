@@ -4,9 +4,9 @@ from rest_framework import routers
 from author import views
 
 router = routers.DefaultRouter()
-router.register('authors', views.AuthorViewSet, basename="manage")
+router.register("author", views.AuthorViewSet, basename="manage")
 urlpatterns = [
     path("", include(router.urls))
 ]
 
-app_name = 'author'
+app_name = "author"
