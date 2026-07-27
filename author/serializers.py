@@ -10,6 +10,10 @@ class AuthorSerializer(serializers.ModelSerializer):
     age = serializers.IntegerField()
     retired = serializers.BooleanField()
 
+    def Meta(self):
+        model = Author
+        fields = "__all__"
+
     def create(self, validated_data):
         return Author.objects.create(**validated_data)
 
