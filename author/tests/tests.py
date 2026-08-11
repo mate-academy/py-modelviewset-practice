@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from rest_framework import status
 
 from rest_framework.test import APIClient
@@ -7,7 +7,7 @@ from rest_framework.test import APIClient
 from author.models import Author
 from author.serializers import AuthorSerializer
 
-AUTHORS_URL = reverse("author:manage-list")
+AUTHORS_URL = reverse_lazy("author:author-list")
 
 
 class AuthorApiTests(TestCase):
