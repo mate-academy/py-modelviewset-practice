@@ -9,6 +9,7 @@ from author.serializers import AuthorSerializer
 
 AUTHORS_URL = reverse_lazy("author:author-list")
 
+
 class AuthorApiTests(TestCase):
     def setUp(self) -> None:
         self.client = APIClient()
