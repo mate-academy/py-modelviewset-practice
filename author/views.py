@@ -1,6 +1,14 @@
-from rest_framework import viewsets
+from rest_framework import generics
+
+from author.models import Author
+from author.serializers import AuthorSerializer
 
 
-class AuthorViewSet(viewsets.ModelViewSet):
-    # write your code here
-    pass
+class AuthorList(generics.ListCreateAPIView):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+
+
+class AuthorDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer

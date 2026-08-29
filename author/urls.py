@@ -1,3 +1,10 @@
-# Create your urls here
+from django.urls import path
 
-urlpatterns = []
+from author.views import AuthorList, AuthorDetail
+
+urlpatterns = [
+    path("authors/", AuthorList.as_view(), name="manage-list"),
+    path("authors/<int:pk>/", AuthorDetail.as_view(), name="manage-detail"),
+]
+
+app_name = "author"
