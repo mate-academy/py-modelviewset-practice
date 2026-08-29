@@ -1,5 +1,7 @@
 from django.db import models
 
+from rest_framework.reverse import reverse
+
 
 class Author(models.Model):
     first_name = models.CharField(max_length=64)
