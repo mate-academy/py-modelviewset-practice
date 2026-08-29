@@ -147,3 +147,4 @@ class AuthorApiTests(TestCase):
             f"{AUTHORS_URL}50/",
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
