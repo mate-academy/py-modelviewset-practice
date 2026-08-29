@@ -1,6 +1,8 @@
 from rest_framework import serializers
+from .models import Author
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-    # write your code here
-    pass
+    class Meta:
+        model = Author
+        fields = ["first_name", "last_name", "pseudonym", "age", "retired"]
