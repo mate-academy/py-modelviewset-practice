@@ -1,3 +1,10 @@
-# Create your urls here
+from rest_framework import routers
+from django.urls import path, include
+from author.views import AuthorViewSet
 
-urlpatterns = []
+routers = routers.DefaultRouter()
+routers.register("authors", AuthorViewSet, basename="manage")
+
+urlpatterns = [path("", include(routers.urls))]
+
+app_name = "author"
