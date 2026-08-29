@@ -7,3 +7,9 @@ class Author(models.Model):
     pseudonym = models.CharField(max_length=64, null=True, blank=True)
     age = models.IntegerField()
     retired = models.BooleanField()
+
+    class Meta:
+        verbose_name_plural = "authors"
+
+    def __str__(self):
+        return self.first_name, self.last_name
