@@ -1,12 +1,13 @@
-from os.path import basename
-
-from django.urls import path, include
 from rest_framework import routers
 from author.views import AuthorViewSet
 
 
 router = routers.DefaultRouter()
-router.register("authors", AuthorViewSet, basename="manage")
+router.register(
+    "authors",
+    AuthorViewSet,
+    basename="manage"
+)
 
 urlpatterns = [] + router.urls
 
