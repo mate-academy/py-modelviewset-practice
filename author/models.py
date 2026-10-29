@@ -6,4 +6,7 @@ class Author(models.Model):
     last_name = models.CharField(max_length=64)
     pseudonym = models.CharField(max_length=64, null=True, blank=True)
     age = models.IntegerField()
-    retired = models.BooleanField()
+    retired = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name}"
