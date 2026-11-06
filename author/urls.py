@@ -9,5 +9,5 @@ router = routers.DefaultRouter()
 router.register("authors/", AuthorViewSet, basename="manage")
 
 urlpatterns = [
-	path("", include(router.urls)),
+    path("", include(router.urls)),
 ]
